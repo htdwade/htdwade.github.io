@@ -1,0 +1,623 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VSCode配置开发环境 | Gridea</title>
+<meta name="description" content="温故而知新" />
+<link rel="shortcut icon" href="https://htdwade.github.io/favicon.ico">
+<link rel="stylesheet" href="https://htdwade.github.io/styles/main.css">
+
+<script src="https://htdwade.github.io/media/js/jquery.min.js"></script>
+<script src="https://htdwade.github.io/media/js/masonry.pkgd.min.js"></script>
+<script src="https://htdwade.github.io/media/js/aos.js"></script>
+<script src="https://htdwade.github.io/media/js/pace.min.js"></script>
+<script src="https://htdwade.github.io/media/js/view-image.min.js"></script>
+<script src="https://htdwade.github.io/media/js/functions.js"></script>
+    <script src="https://htdwade.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://htdwade.github.io/media/js/prism.min.js"></script>
+    
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+    
+  </head>
+  <body>
+            <header id="header" class="grid-container">
+        <!-- start: .menu-wrapper -->
+        <div class="menu-mobile"> 
+          <i class="fa fa-reorder"></i>
+        </div>
+        <div class="menu-wrapper">
+          <div class="">
+            <div class="logo">
+              <a href="https://htdwade.github.io"><img src="https://htdwade.github.io/media/images/logoo.png" alt=""></a>
+            </div>
+            <!-- start: .main-nav -->
+
+            <nav class="main-nav grid-container grid-parent">
+              <ul id="menu-header" class="menu gradient-effect">
+                
+                  <li class=""><a href="https://htdwade.github.io" class="menu">首页</a></li>
+                
+                
+                  <li class="" >
+                    <a href="/archives" class="menu">
+                      归档
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/tags" class="menu">
+                      标签
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/books" class="menu">
+                      阅读
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/post/about" class="menu">
+                      关于
+                    </a>
+                  </li>
+                
+              </ul>
+            </nav>
+            <!-- end: .main-nav -->
+            <div class="clear"></div>
+            <div class="border hide-on-tablet hide-on-mobile"></div>
+          </div>    
+          <div class="clear"></div>
+        </div>
+        <!-- end: .menu-wrapper -->
+        <div class="clear"></div>
+      </header>
+
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('https://htdwade.github.io/post-images/vscode-pei-zhi-kai-fa-huan-jing.jpg');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-01-03"><i class="fa fa-calendar"></i><span class="lately">2020-01-03</span></time>
+               
+               
+               <span id="/post/vscode-pei-zhi-kai-fa-huan-jing/" class="leancloud_visitors views-counter meta-info">
+                <i class="fa fa-leancloud"></i><span class="leancloud-visitors-count" style="vertical-align: middle;">0</span>
+               </span>
+               
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://htdwade.github.io/tag/51fAkRjah/" class="ctag ctag-0 ctag-51fAkRjah" aria-label="">VSCode</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">VSCode配置开发环境</h1>
+            </div>
+          </div>
+        </div>  
+
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <p>记录自己VSCode的插件和开发环境配置。</p>
+<!-- more -->
+<h2 id="1-vscode下载安装">1. VSCode下载安装</h2>
+<p><a href="https://code.visualstudio.com/download">VSCode下载地址</a></p>
+<p>安装过程中已经将bin目录加入到环境变量Path路径.</p>
+<h2 id="2-安装插件">2. 安装插件</h2>
+<ul>
+<li>Chinese (Simplified) Language Pack for Visual Studio Code //简体中文包</li>
+<li>One Dark Pro //主题</li>
+<li>vscode-icons  //图标主题</li>
+<li>Material Icon Theme //图标主题</li>
+<li>Power Mode //打字特效</li>
+<li>Bracket Pair Colorizer 2 //彩虹花括号</li>
+<li>Code Runner //代码运行</li>
+<li>Color Highlight //颜色高亮</li>
+<li>TODO Highlight //todo高亮</li>
+<li>Markdown All in One</li>
+<li>Markdown Preview Enhanced</li>
+<li>Markdown PDF</li>
+<li>LeetCode</li>
+</ul>
+<h2 id="3-配置开发环境">3. 配置开发环境</h2>
+<h3 id="c">C++</h3>
+<p>安装插件: C/C++</p>
+<p><a href="https://www.zhihu.com/question/30315894/answer/154979413">VSCode配置C++运行环境</a></p>
+<p>launch.json:</p>
+<pre><code class="language-json">// https://github.com/Microsoft/vscode-cpptools/blob/master/launch.md
+{
+    &quot;version&quot;: &quot;0.2.0&quot;,
+    &quot;configurations&quot;: [
+        {
+            &quot;name&quot;: &quot;(gdb) Launch&quot;, // 配置名称，将会在启动配置的下拉菜单中显示
+            &quot;type&quot;: &quot;cppdbg&quot;, // 配置类型，cppdbg对应cpptools提供的调试功能；可以认为此处只能是cppdbg
+            &quot;request&quot;: &quot;launch&quot;, // 请求配置类型，可以为launch（启动）或attach（附加）
+            &quot;program&quot;: &quot;${fileDirname}/${fileBasenameNoExtension}.exe&quot;, // 将要进行调试的程序的路径
+            &quot;args&quot;: [], // 程序调试时传递给程序的命令行参数，一般设为空即可
+            &quot;stopAtEntry&quot;: false, // 设为true时程序将暂停在程序入口处，相当于在main上打断点
+            &quot;cwd&quot;: &quot;${fileDirname}&quot;, // 调试程序时的工作目录，一般为${workspaceFolder}；改成${fileDirname}可变为文件所在目录
+            &quot;environment&quot;: [], // 环境变量
+            &quot;externalConsole&quot;: false, // 为true时使用单独的cmd窗口，与其它IDE一致；18年10月后设为false可调用VSC内置终端
+            &quot;internalConsoleOptions&quot;: &quot;neverOpen&quot;, // 如果不设为neverOpen，调试时会跳到“调试控制台”选项卡，你应该不需要对gdb手动输命令吧？
+            &quot;MIMode&quot;: &quot;gdb&quot;, // 指定连接的调试器，可以为gdb或lldb。但我没试过lldb
+            &quot;miDebuggerPath&quot;: &quot;gdb.exe&quot;, // 调试器路径，Windows下后缀不能省略，Linux下则不要
+            &quot;setupCommands&quot;: [
+                { // 模板自带，好像可以更好地显示STL容器的内容，具体作用自行Google
+                    &quot;description&quot;: &quot;Enable pretty-printing for gdb&quot;,
+                    &quot;text&quot;: &quot;-enable-pretty-printing&quot;,
+                    &quot;ignoreFailures&quot;: false
+                }
+            ],
+            &quot;preLaunchTask&quot;: &quot;Compile&quot; // 调试会话开始前执行的任务，一般为编译程序。与tasks.json的label相对应
+        }
+    ]
+}
+</code></pre>
+<p>task.json:</p>
+<pre><code class="language-json">// https://code.visualstudio.com/docs/editor/tasks
+{
+    &quot;version&quot;: &quot;2.0.0&quot;,
+    &quot;tasks&quot;: [
+        {
+            &quot;label&quot;: &quot;Compile&quot;, // 任务名称，与launch.json的preLaunchTask相对应
+            &quot;command&quot;: &quot;g++&quot;, // 要使用的编译器
+            &quot;args&quot;: [
+                &quot;${file}&quot;,
+                &quot;-o&quot;, // 指定输出文件名，不加该参数则默认输出a.exe，Linux下默认a.out
+                &quot;${fileDirname}/${fileBasenameNoExtension}.exe&quot;,
+                &quot;-g&quot;, // 生成和调试有关的信息
+                &quot;-Wall&quot;, // 开启额外警告
+                &quot;-static-libgcc&quot;, // 静态链接libgcc，一般都会加上
+                &quot;-std=c++17&quot;, // C++最新标准为c++17，或根据自己的需要进行修改
+            ], // 编译命令参数
+            &quot;type&quot;: &quot;process&quot;, // process是vsc把预定义变量和转义解析后直接全部传给command；shell相当于先打开shell再输入命令，所以args还会经过shell再解析一遍
+            &quot;group&quot;: {
+                &quot;kind&quot;: &quot;build&quot;,
+                &quot;isDefault&quot;: true // 不为true时ctrl shift B就要手动选择了
+            },
+            &quot;presentation&quot;: {
+                &quot;echo&quot;: true,
+                &quot;reveal&quot;: &quot;always&quot;, // 执行任务时是否跳转到终端面板，可以为always，silent，never。具体参见VSC的文档
+                &quot;focus&quot;: false, // 设为true后可以使执行task时焦点聚集在终端，但对编译C/C++来说，设为true没有意义
+                &quot;panel&quot;: &quot;shared&quot; // 不同的文件的编译信息共享一个终端面板
+            },
+            &quot;problemMatcher&quot;:&quot;$gcc&quot; // 此选项可以捕捉编译时终端里的报错信息
+        }
+    ]
+}
+</code></pre>
+<p>c_cpp_properties.json:</p>
+<pre><code class="language-json">{
+    &quot;configurations&quot;: [
+        {
+            &quot;name&quot;: &quot;Win32&quot;,
+            &quot;includePath&quot;: [
+                &quot;${workspaceFolder}/**&quot;
+            ],
+            &quot;defines&quot;: [
+                &quot;_DEBUG&quot;,
+                &quot;UNICODE&quot;,
+                &quot;_UNICODE&quot;
+            ],
+            &quot;compilerPath&quot;: &quot;E:\\mingw64\\bin\\gcc.exe&quot;,
+            &quot;cStandard&quot;: &quot;c11&quot;,
+            &quot;cppStandard&quot;: &quot;c++17&quot;,
+            &quot;intelliSenseMode&quot;: &quot;gcc-x64&quot;
+        }
+    ],
+    &quot;version&quot;: 4
+}
+</code></pre>
+<p>另外需要在<code>E:\mingw64\lib\gcc\x86_64-w64-mingw32\8.1.0\include\c++\bits</code>文件夹中加入<code>stdc++.h</code>文件，才能使用万能头文件<code>&lt;bits/stdc++.h&gt;</code>。</p>
+<pre><code class="language-c++">// C++ includes used for precompiling -*- C++ -*-
+
+// Copyright (C) 2003-2018 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// &lt;http://www.gnu.org/licenses/&gt;.
+
+/** @file stdc++.h
+ *  This is an implementation file for a precompiled header.
+ */
+
+// 17.4.1.2 Headers
+
+// C
+#ifndef _GLIBCXX_NO_ASSERT
+#include &lt;cassert&gt;
+#endif
+#include &lt;cctype&gt;
+#include &lt;cerrno&gt;
+#include &lt;cfloat&gt;
+#include &lt;ciso646&gt;
+#include &lt;climits&gt;
+#include &lt;clocale&gt;
+#include &lt;cmath&gt;
+#include &lt;csetjmp&gt;
+#include &lt;csignal&gt;
+#include &lt;cstdarg&gt;
+#include &lt;cstddef&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstdlib&gt;
+#include &lt;cstring&gt;
+#include &lt;ctime&gt;
+
+#if __cplusplus &gt;= 201103L
+#include &lt;ccomplex&gt;
+#include &lt;cfenv&gt;
+#include &lt;cinttypes&gt;
+#include &lt;cstdalign&gt;
+#include &lt;cstdbool&gt;
+#include &lt;cstdint&gt;
+#include &lt;ctgmath&gt;
+#include &lt;cuchar&gt;
+#include &lt;cwchar&gt;
+#include &lt;cwctype&gt;
+#endif
+
+// C++
+#include &lt;algorithm&gt;
+#include &lt;bitset&gt;
+#include &lt;complex&gt;
+#include &lt;deque&gt;
+#include &lt;exception&gt;
+#include &lt;fstream&gt;
+#include &lt;functional&gt;
+#include &lt;iomanip&gt;
+#include &lt;ios&gt;
+#include &lt;iosfwd&gt;
+#include &lt;iostream&gt;
+#include &lt;istream&gt;
+#include &lt;iterator&gt;
+#include &lt;limits&gt;
+#include &lt;list&gt;
+#include &lt;locale&gt;
+#include &lt;map&gt;
+#include &lt;memory&gt;
+#include &lt;new&gt;
+#include &lt;numeric&gt;
+#include &lt;ostream&gt;
+#include &lt;queue&gt;
+#include &lt;set&gt;
+#include &lt;sstream&gt;
+#include &lt;stack&gt;
+#include &lt;stdexcept&gt;
+#include &lt;streambuf&gt;
+#include &lt;string&gt;
+#include &lt;typeinfo&gt;
+#include &lt;utility&gt;
+#include &lt;valarray&gt;
+#include &lt;vector&gt;
+
+#if __cplusplus &gt;= 201103L
+#include &lt;array&gt;
+#include &lt;atomic&gt;
+#include &lt;chrono&gt;
+#include &lt;codecvt&gt;
+#include &lt;condition_variable&gt;
+#include &lt;forward_list&gt;
+#include &lt;future&gt;
+#include &lt;initializer_list&gt;
+#include &lt;mutex&gt;
+#include &lt;random&gt;
+#include &lt;ratio&gt;
+#include &lt;regex&gt;
+#include &lt;scoped_allocator&gt;
+#include &lt;system_error&gt;
+#include &lt;thread&gt;
+#include &lt;tuple&gt;
+#include &lt;typeindex&gt;
+#include &lt;type_traits&gt;
+#include &lt;unordered_map&gt;
+#include &lt;unordered_set&gt;
+#endif
+</code></pre>
+<h3 id="java">Java</h3>
+<p>安装插件：Java Extension Pack(包括6个扩展)</p>
+<p><a href="https://code.visualstudio.com/docs/java/java-tutorial">VSCode配置Java运行环境</a></p>
+<h3 id="go">Go</h3>
+<p>安装插件：Go</p>
+<p><a href="https://code.visualstudio.com/docs/languages/go">VSCode配置Go运行环境</a></p>
+<h3 id="python">Python</h3>
+<p>安装插件：Python</p>
+<p><a href="https://code.visualstudio.com/docs/python/python-tutorial">VSCode配置Python运行环境</a></p>
+<h3 id="remote-development">Remote Development</h3>
+<p>安装插件：Remote Development(包括3个扩展)</p>
+<p><a href="https://zhuanlan.zhihu.com/p/64849549">VSCode配置remote ssh</a></p>
+<p>配置<code>~.ssh/config</code>:</p>
+<pre><code class="language-bash"># Read more about SSH config files: https://linux.die.net/man/5/ssh_config
+Host 腾讯云主机
+    HostName 111.230.92.98
+    User root
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/htdwade/PicBed/master/img/20191224215300.png" alt="" loading="lazy"></figure>
+<p>将本机的公钥复制到远程机器的authorized_keys文件中，打开git bash，敲入以下命令：</p>
+<pre><code class="language-bash">ssh-copy-id root@111.230.92.98
+</code></pre>
+<p>现在无需密码就能连接远程主机</p>
+<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/htdwade/PicBed/master/img/20191224220310.png" alt="" loading="lazy"></figure>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              <article class="prev grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://htdwade.github.io/post-images/jetbrains-xi-lie-chan-pin-po-jie-ji-huo.jpg');"></div>
+                 <a href="https://htdwade.github.io/post/jetbrains-xi-lie-chan-pin-po-jie-ji-huo/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-01-07">2020-01-07</time>
+                  <h4 class="title white no-margin">Jetbrains系列产品破解激活</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://htdwade.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://htdwade.github.io/post-images/picgo-github-da-jian-tu-chuang.jpg');"></div>
+                 <a href="https://htdwade.github.io/post/picgo-github-da-jian-tu-chuang/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2019-12-27">2019-12-27</time>
+                  <h4 class="title white no-margin">PicGo + GitHub搭建图床</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://htdwade.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+
+              <div id="comments" class="bg-white hosted ">
+
+              
+                
+                  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/valine/1.3.10/Valine.Pure.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var valine = new Valine();
+  valine.init({
+          appId: 'muxDF4gySUI9swgG3lBedbaX-gzGzoHsz' ,
+          appKey: 'ojCckaFWPJKelcXbbXE9q6Ff',
+          visitor: true // 阅读量统计
+  })
+
+  var gitalk = new Gitalk({
+    clientID: 'd1b65bea7b543dd88ab7',
+    clientSecret: 'f4d32784d9c8afaa25d41a3d2c07b9bd2c50866c',
+    repo: 'htdwade.github.io',
+    owner: 'htdwade',
+    admin: ['htdwade'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+                
+                
+              
+                <div class="clear"></div>
+              </div>
+
+              <div class="clear"></div>
+            </div>
+          </div>
+      </main>
+
+          <footer id="footer" class="grid-container">
+        <div class="widgets row gradient-effect">
+            <div class="default-sidebar border-effect">
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_epcl_posts_thumbs underline-effect">
+                  <h4 class="widget-title title white bordered">最新文章</h4>
+                  
+                  
+                  <article class="item post-0 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://htdwade.github.io/post/windows-ping-tai-chang-yong-ruan-jian-he-chrome-cha-jian/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display: block;background-image: url('https://htdwade.github.io/post-images/windows-ping-tai-chang-yong-ruan-jian-he-chrome-cha-jian.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-06-09">2020-06-09</time>
+                      <h4 class="title usmall">
+                        <a href="https://htdwade.github.io/post/windows-ping-tai-chang-yong-ruan-jian-he-chrome-cha-jian/">Windows平台常用软件和Chrome插件</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://htdwade.github.io/post/jetbrains-xi-lie-chan-pin-po-jie-ji-huo/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display: block;background-image: url('https://htdwade.github.io/post-images/jetbrains-xi-lie-chan-pin-po-jie-ji-huo.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-01-07">2020-01-07</time>
+                      <h4 class="title usmall">
+                        <a href="https://htdwade.github.io/post/jetbrains-xi-lie-chan-pin-po-jie-ji-huo/">Jetbrains系列产品破解激活</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://htdwade.github.io/post/vscode-pei-zhi-kai-fa-huan-jing/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display: block;background-image: url('https://htdwade.github.io/post-images/vscode-pei-zhi-kai-fa-huan-jing.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-01-03">2020-01-03</time>
+                      <h4 class="title usmall">
+                        <a href="https://htdwade.github.io/post/vscode-pei-zhi-kai-fa-huan-jing/">VSCode配置开发环境</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_tag_cloud underline-effect">
+                  <h4 class="widget-title title white bordered">标签云</h4>
+                  <div class="tagcloud">
+                    
+                      <a href="https://htdwade.github.io/tag/jRvDluv9-/" class="ctag ctag-0 ctag-jRvDluv9-" aria-label="">效率工具</a>
+                    
+                      <a href="https://htdwade.github.io/tag/BLw_6jC7t/" class="ctag ctag-1 ctag-BLw_6jC7t" aria-label="">破解</a>
+                    
+                      <a href="https://htdwade.github.io/tag/51fAkRjah/" class="ctag ctag-2 ctag-51fAkRjah" aria-label="">VSCode</a>
+                    
+                      <a href="https://htdwade.github.io/tag/ChWDI-UyR/" class="ctag ctag-3 ctag-ChWDI-UyR" aria-label="">Gridea</a>
+                    
+                  </div>
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="epcl_about-2" class="widget widget_epcl_about underline-effect">
+                  <h4 class="widget-title title white bordered">关于我</h4>
+                  <div class="avatar">
+                    <a href="" class="translate-effect thumb"><span class="fullimage cover" style="background-image: url(https://htdwade.github.io/images/avatar.png);"></span></a>
+                  </div>
+                  <div class="info">
+                    <h4 class="title small author-name gradient-effect no-margin"><a href="">Gridea</a></h4>
+                    <p class="founder">温故而知新</p>
+                    <div class="social">
+                      
+                          
+                            <a href="https://github.com/htdwade" class="translate-effect" target="_blank"><i class="fa fa-github"></i></a>
+                        
+                      
+                          
+                            <a href="https://weibo.com/u/2965384414" class="translate-effect" target="_blank"><i class="fa fa-twitter"></i></a>
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                    </div> 
+                  </div>
+                  <div class="clear"></div>
+                  </section>
+              </div>
+
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="logo">
+          <a href="https://htdwade.github.io"><img class="" src="https://htdwade.github.io/media/images/logo.png" alt=""></a>
+        </div>
+        <p class="published border-effect">
+          ©2019 共 5 篇文章
+          <br/>
+          Theme <a href="https://gridea.dev/" target="_blank">「gridea-theme-breek」</a> Powered by <a href="https://gridea.dev/" target="_blank">「Gridea」</a>
+        </p>
+        
+        <a href="javascript:void(0)" id="back-to-top" class="epcl-button dark" style="display:none">
+          <i class="fa fa-arrow"></i>
+        </a>
+    </footer>
+    <div class="clear"></div>
+
+      <script type="text/javascript">
+       jQuery(document).ready(function($){
+          $("photos img").each(function(){
+              var _a = $("<a></a>").attr("href",this.src);
+              $(this).wrap("<div class='photo'></div>").wrap(_a);
+          })
+          $("figure img").each(function(){
+              var _b = $("<a></a>").attr("href",this.src);
+              $(this).wrap(_b);
+          })
+          isImgLoad(function(){
+            var photos = document.querySelector('photos');
+            if(photos){
+              waterfall(photos);
+            }
+            $(window).resize(function() {
+             if(photos){
+                  waterfall(photos);
+            }
+          });
+        });
+        var t_img;
+        var isLoad = true;
+        function isImgLoad(callback){
+          $('photos img').each(function(){
+            if(this.height === 0){
+              isLoad = false;
+              return false;
+            }
+          });
+          if(isLoad){
+            clearTimeout(t_img);
+            callback();
+          }else{
+            isLoad = true;
+            t_img = setTimeout(function(){
+              isImgLoad(callback);
+            },500);
+          }
+        }
+      });
+      </script>
+
+    </div>
+    <!-- end: #wrapper -->
+  </body>
+</html>
